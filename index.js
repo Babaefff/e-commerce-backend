@@ -12,6 +12,8 @@ import productRoutes from "./routes/productRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 
+import cors from "cors"
+
 dotenv.config();
 const port = process.env.PORT || 5000;
 
@@ -23,7 +25,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const cors = require('cors');
 app.use(cors({
   origin: 'https://e-commerce-xbq8.onrender.com',
 }));
