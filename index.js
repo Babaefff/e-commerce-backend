@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 const cors = require('cors');
 app.use(cors({
-  origin: 'https://e-commerce-xbq8.onrender.com/',
+  origin: 'https://e-commerce-xbq8.onrender.com',
 }));
 
 app.use("/api/users", userRoutes);
