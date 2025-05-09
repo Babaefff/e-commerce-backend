@@ -23,6 +23,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://e-commerce-xbq8.onrender.com/',
+}));
+
 app.use("/api/users", userRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/products", productRoutes);
