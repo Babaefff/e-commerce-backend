@@ -12,7 +12,7 @@ import productRoutes from "./routes/productRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 
-import cors from "cors"
+import cors from "cors";
 
 dotenv.config();
 const port = process.env.PORT || 5000;
@@ -25,9 +25,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use(cors({
-  origin: 'https://e-commerce-xbq8.onrender.com',
-}));
+app.use(
+  cors({
+    origin: "https://e-commerce-xbq8.onrender.com",
+    credentials: true,
+  })
+);
 
 app.use("/api/users", userRoutes);
 app.use("/api/category", categoryRoutes);
